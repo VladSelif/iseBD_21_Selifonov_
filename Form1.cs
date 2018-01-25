@@ -14,6 +14,9 @@ namespace Laba_2__samolet_
     {
 
         Parking parking;
+
+        Form2 form;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +35,7 @@ namespace Laba_2__samolet_
         {
             if (listBox1.SelectedIndex > -1)
             {
+
 
                 Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
                 Graphics gr = Graphics.FromImage(bmp);
@@ -66,6 +70,8 @@ namespace Laba_2__samolet_
                     MessageBox.Show("№ Ангара: " + place);
                 }
             }
+
+
         }
 
         private void buttonTakeAirplane_Click(object sender, EventArgs e)
@@ -80,6 +86,7 @@ namespace Laba_2__samolet_
                 airplane.drawAirplane(gr);
                 pictureBox2.Image = bmp;
                 Draw();
+
             }
         }
 
@@ -101,6 +108,30 @@ namespace Laba_2__samolet_
             listBox1.SelectedIndex = parking.getCurrentLevel;
             Draw();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            form = new Form2();
+            form.AddEvent(AddAirplane);
+            form.Show();
+        }
+
+        private void AddAirplane(ITransport airplane)
+        {
+            if (airplane != null)
+            {
+                int place = parking.PutAirplaneInParking(airplane);
+                if (place > -1)
+                {
+                    Draw();
+                    MessageBox.Show("Ваше место: " + place);
+                }
+                else
+                {
+                    MessageBox.Show("Технику не удалось поставить");
+                }
+            }
         }
     }
 }

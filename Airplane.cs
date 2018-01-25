@@ -104,7 +104,7 @@ namespace  Laba_2__samolet_
         protected virtual void drawLightAirplane(Graphics g)
         {
             
-            Brush br = new SolidBrush(ColorBody);
+            Brush br = new SolidBrush(this.ColorBody);
             //tail spoiler
             g.FillRectangle(br, startPosX + 10, startPosY+15 , 10, 40);
             //wings

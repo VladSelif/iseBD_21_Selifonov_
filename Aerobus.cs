@@ -32,7 +32,7 @@ namespace Laba_2__samolet_
             {
                 Brush engine = new SolidBrush(dopColor);
 
-                g.FillEllipse(engine, startPosX + 22, startPosY,50, 15);
+                g.FillEllipse(engine, startPosX + 22, startPosY, 50, 15);
 
             }
             if (reactiveEngine_right)
@@ -42,15 +42,15 @@ namespace Laba_2__samolet_
                 g.FillEllipse(engine, startPosX + 22, startPosY + 55, 50, 15);
 
             }
-            
+
             base.drawLightAirplane(g);
-         
+
             if (windows)
             {
                 Brush window = new SolidBrush(Color.White);
 
-                g.FillEllipse(window, startPosX + 30, startPosY+ 30, 8, 8);
-                g.FillEllipse(window, startPosX + 20, startPosY + 30, 8,8);
+                g.FillEllipse(window, startPosX + 30, startPosY + 30, 8, 8);
+                g.FillEllipse(window, startPosX + 20, startPosY + 30, 8, 8);
                 g.FillEllipse(window, startPosX + 40, startPosY + 30, 8, 8);
                 g.FillEllipse(window, startPosX + 50, startPosY + 30, 8, 8);
             }
@@ -61,6 +61,14 @@ namespace Laba_2__samolet_
                 g.FillRectangle(br, startPosX + 5, startPosY + 15, 10, 40);
             }
         }
+
+
+
+            public void setDopColor(Color color)
+        {
+            dopColor = color;
+        }
+        
     }
 }
 
