@@ -78,6 +78,23 @@ namespace  Laba_2__samolet_
             startPosY = rand.Next(10, 200);
         }
 
+        public Airplane(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 4)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                MaxCountPassengers = Convert.ToInt32(strs[1]);
+                Weight = Convert.ToInt32(strs[2]);
+                ColorBody = Color.FromName(strs[3]);
+            }
+            this.countPassengers = 0;
+            Random rand = new Random();
+            startPosX = rand.Next(10, 200);
+            startPosY = rand.Next(10, 200);
+        }
+
+
         public override void moveAirplane(Graphics g)
         {
             startPosX += (MaxSpeed * 50 / (float)Weight) / (countPassengers == 0 ? 1 : countPassengers);
@@ -117,5 +134,12 @@ namespace  Laba_2__samolet_
             g.FillRectangle(brBlack, startPosX+66, startPosY + 25, 10, 20);
             
         }
-    }
+
+        public override string getInfo()
+        {
+            return MaxSpeed + ";" + MaxCountPassengers + ";" +
+            Weight + ";" + ColorBody.Name;
+        }
+    
+}
 }

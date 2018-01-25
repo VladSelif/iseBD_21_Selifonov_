@@ -12,9 +12,12 @@ namespace Laba_2__samolet_
 {
     public partial class Form2 : Form
     {
+        // переменная-выбранная машина
         ITransport airplane = null;
+        // получить машину
 
         public ITransport getAirplane { get { return airplane; } }
+        
 
         public Form2()
         {
@@ -31,6 +34,8 @@ namespace Laba_2__samolet_
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
        
+       
+
         private void DrawAirplane()
         {
             if (airplane != null)
@@ -41,7 +46,8 @@ namespace Laba_2__samolet_
                 airplane.drawAirplane(gr);
                 pictureBoxAirplane.Image = bmp;
             }
-        }      
+        }
+       
 
         private event myDel eventAddAirplane;
 
@@ -68,6 +74,8 @@ namespace Laba_2__samolet_
             labelAerobus.DoDragDrop(labelAerobus.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
 
+
+
         private void panel1_DragDrop(object sender, DragEventArgs e)
         {
             switch (e.Data.GetData(DataFormats.Text).ToString())
@@ -91,6 +99,8 @@ namespace Laba_2__samolet_
                 e.Effect = DragDropEffects.None;
         }
 
+        
+
         private void labelBaseColor_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(Color)))
@@ -98,7 +108,8 @@ namespace Laba_2__samolet_
             else
                 e.Effect = DragDropEffects.None;
         }
-        
+       
+      
         private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
         {
             if ( airplane != null)
@@ -106,13 +117,19 @@ namespace Laba_2__samolet_
                 airplane.setMainColor((Color)e.Data.GetData(typeof(Color)));
                 DrawAirplane();
             }
+
         }
+
+        
+        
 
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             (sender as Control).DoDragDrop((sender as Control).BackColor, 
                 DragDropEffects.Move | DragDropEffects.Copy);
         }
+
+
 
         private void label2_DragDrop(object sender, DragEventArgs e)
         {
@@ -126,15 +143,19 @@ namespace Laba_2__samolet_
                 }
             }
         }
-    
+
+       
+
+        
         private void buttonSetAirplane_Click(object sender, EventArgs e)
         {
             if (eventAddAirplane != null)
             {
-            
                 eventAddAirplane(airplane);
             }
             Close();
         }
+
+     
     }
 }

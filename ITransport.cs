@@ -24,5 +24,7 @@ namespace Laba_2__samolet_
         int getPassenger();
 
         void setMainColor(Color color);
+
+        string getInfo();
     }
 }
