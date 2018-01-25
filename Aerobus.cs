@@ -26,6 +26,25 @@ namespace Laba_2__samolet_
             this.dopColor = dopColor;
         }
 
+
+
+        public Aerobus(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 9)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                MaxCountPassengers = Convert.ToInt32(strs[1]);
+                Weight = Convert.ToInt32(strs[2]);
+                ColorBody = Color.FromName(strs[3]);
+                reactiveEngine_left = Convert.ToBoolean(strs[4]);
+                reactiveEngine_right = Convert.ToBoolean(strs[5]);
+                windows = Convert.ToBoolean(strs[6]);
+                lines = Convert.ToBoolean(strs[7]);
+                dopColor = Color.FromName(strs[8]);
+            }
+        }
+
         protected override void drawLightAirplane(Graphics g)
         {
             if (reactiveEngine_left)
@@ -68,7 +87,14 @@ namespace Laba_2__samolet_
         {
             dopColor = color;
         }
+
+        public override string getInfo()
+        {
+            return MaxSpeed + ";" + MaxCountPassengers + ";" +
+            Weight + ";" + ColorBody.Name + ";" + reactiveEngine_left + ";" + reactiveEngine_right + ";" +
+        windows + ";" + lines + ";" + dopColor.Name;
         
+         }
     }
 }
 

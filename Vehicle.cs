@@ -54,6 +54,6 @@ namespace Laba_2__samolet_
             ColorBody = color;
         }
 
-        
+        public abstract string getInfo();
     }
 }

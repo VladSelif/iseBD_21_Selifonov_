@@ -21,7 +21,7 @@ namespace Laba_2__samolet_
         {
             InitializeComponent();
             parking = new Parking(5);
-            
+
             for (int i = 1; i < 6; i++)
             {
                 listBox1.Items.Add("Уровень " + i);
@@ -30,7 +30,7 @@ namespace Laba_2__samolet_
 
             Draw();
         }
-      
+
         private void Draw()
         {
             if (listBox1.SelectedIndex > -1)
@@ -70,8 +70,6 @@ namespace Laba_2__samolet_
                     MessageBox.Show("№ Ангара: " + place);
                 }
             }
-
-
         }
 
         private void buttonTakeAirplane_Click(object sender, EventArgs e)
@@ -89,11 +87,6 @@ namespace Laba_2__samolet_
 
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {}    
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {}
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -133,5 +126,41 @@ namespace Laba_2__samolet_
                 }
             }
         }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.SaveData(saveFileDialog1.FileName))
+                {
+                    MessageBox.Show("Сохранение прошло успешно", "",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не сохранилось", "",
+                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.LoadData(openFileDialog1.FileName))
+                {
+                    MessageBox.Show("Загрузили", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                    MessageBox.Show("Не загрузили", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Draw();
+            }
+        }
     }
+    
 }
