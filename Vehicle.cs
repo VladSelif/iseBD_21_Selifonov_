@@ -21,8 +21,12 @@ namespace Laba_2__samolet_
         public virtual double Weight { protected set; get; }
 
         public abstract void moveAirplane(Graphics g);
+
         public abstract void DownAirplane(Graphics gr);
+
+
         public abstract void UpAirplane(Graphics gr);
+
         public abstract void drawAirplane(Graphics g);
 
         public void setPosition(int x, int y)
@@ -44,6 +48,8 @@ namespace Laba_2__samolet_
             int count = countPassengers;
             countPassengers = 0;
             return count;
-        }     
+        }
+
+        
     }
 }

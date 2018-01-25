@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Laba_2__samolet_
 {
-    interface ITransport
+    public interface ITransport
     {
         void moveAirplane(Graphics g);
 

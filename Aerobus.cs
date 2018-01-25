@@ -15,6 +15,7 @@ namespace Laba_2__samolet_
         private bool lines;
         private Color dopColor;
        
+
         public Aerobus(int maxSpeed, int maxCountPassenger, double weight, Color color, bool windows, bool reactiveEngine_left, bool reactiveEngine_right, bool lines,Color dopColor) :
             base(maxSpeed, maxCountPassenger, weight, color)
         {
@@ -30,17 +31,20 @@ namespace Laba_2__samolet_
             if (reactiveEngine_left)
             {
                 Brush engine = new SolidBrush(dopColor);
+
                 g.FillEllipse(engine, startPosX + 22, startPosY,50, 15);
 
             }
             if (reactiveEngine_right)
             {
                 Brush engine = new SolidBrush(dopColor);
+
                 g.FillEllipse(engine, startPosX + 22, startPosY + 55, 50, 15);
 
             }
             
-            base.drawLightAirplane(g); 
+            base.drawLightAirplane(g);
+         
             if (windows)
             {
                 Brush window = new SolidBrush(Color.White);
