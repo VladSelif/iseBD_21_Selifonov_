@@ -8,8 +8,8 @@ namespace Laba_2__samolet_
 {
 
     class ClassArray<T> where T : ITransport
-    {
-        private Dictionary<int, T> places;
+    {   
+        private Dictionary<int, T> places;  
         private int maxCount;
         private T defaultValue;
 

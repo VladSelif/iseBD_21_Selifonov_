@@ -9,12 +9,17 @@ namespace Laba_2__samolet_
 {
     public class Parking
     {
-      
+
         List<ClassArray<ITransport>> parkingStages;
+
         int countPlaces = 15;
+
         int placeSizeWidth = 210;
+
         int placeSizeHeight = 100;
+
         int currentLevel;
+
         public int getCurrentLevel { get { return currentLevel; } }
 
         public void LevelUp()
@@ -47,6 +52,7 @@ namespace Laba_2__samolet_
             return parkingStages[currentLevel] + airplane;
         }
 
+
         public ITransport GetAirplaneInParking(int ticket)
         {
             return parkingStages[currentLevel] - ticket;
@@ -59,7 +65,7 @@ namespace Laba_2__samolet_
             {
                 var airplane = parkingStages[currentLevel][i];
                 if (airplane != null)
-                { ///если место не пустое
+                { 
                     airplane.setPosition(5 + i / 5 * placeSizeWidth + 5, i % 5 * placeSizeHeight + 15);
                     airplane.drawAirplane(g);
                 }
@@ -68,12 +74,13 @@ namespace Laba_2__samolet_
 
         private void DrawMarking(Graphics g)
         {
-            Pen pen = new Pen(Color.Black, 3);
+            Pen pen = new Pen(Color.Black, 3);          
             g.DrawString("L" + (currentLevel + 1), new Font("Arial", 30), new SolidBrush(Color.Blue), (countPlaces / 5) * placeSizeWidth - 70, 420);
 
             g.DrawRectangle(pen, 0, 0, (countPlaces / 5) * placeSizeWidth, 550);
             for (int i = 0; i < countPlaces / 5; i++)
             {
+                
                 for (int j = 0; j < 6; ++j)
                 {
                     g.DrawLine(pen, i * placeSizeWidth, j * placeSizeHeight, i * placeSizeWidth + 110, j * placeSizeHeight);
