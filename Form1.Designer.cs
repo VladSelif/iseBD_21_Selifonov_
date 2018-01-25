@@ -36,6 +36,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -46,16 +49,16 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(672, 557);
+            this.pictureBox1.Size = new System.Drawing.Size(721, 527);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonSetAirplane
             // 
-            this.buttonSetAirplane.Location = new System.Drawing.Point(684, 39);
+            this.buttonSetAirplane.Location = new System.Drawing.Point(773, 258);
             this.buttonSetAirplane.Name = "buttonSetAirplane";
-            this.buttonSetAirplane.Size = new System.Drawing.Size(152, 83);
+            this.buttonSetAirplane.Size = new System.Drawing.Size(71, 48);
             this.buttonSetAirplane.TabIndex = 1;
             this.buttonSetAirplane.Text = "Загнать в ангар самолет";
             this.buttonSetAirplane.UseVisualStyleBackColor = true;
@@ -63,9 +66,9 @@
             // 
             // buttonSetAerobus
             // 
-            this.buttonSetAerobus.Location = new System.Drawing.Point(684, 137);
+            this.buttonSetAerobus.Location = new System.Drawing.Point(855, 258);
             this.buttonSetAerobus.Name = "buttonSetAerobus";
-            this.buttonSetAerobus.Size = new System.Drawing.Size(152, 84);
+            this.buttonSetAerobus.Size = new System.Drawing.Size(76, 48);
             this.buttonSetAerobus.TabIndex = 2;
             this.buttonSetAerobus.Text = "Загнать в Ангар Аэробус";
             this.buttonSetAerobus.UseVisualStyleBackColor = true;
@@ -87,9 +90,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.buttonTakeAirplane);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(678, 327);
+            this.groupBox1.Location = new System.Drawing.Point(773, 328);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(178, 218);
+            this.groupBox1.Size = new System.Drawing.Size(180, 218);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выбор Самолета";
@@ -119,11 +122,42 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBox1.TabIndex = 0;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(773, 71);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(158, 95);
+            this.listBox1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(773, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 70);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "<<";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(855, 182);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(76, 70);
+            this.button2.TabIndex = 7;
+            this.button2.Text = ">>";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 557);
+            this.ClientSize = new System.Drawing.Size(986, 527);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonSetAerobus);
             this.Controls.Add(this.buttonSetAirplane);
@@ -149,6 +183,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
