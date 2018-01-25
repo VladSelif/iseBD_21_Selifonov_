@@ -15,9 +15,10 @@ namespace Laba_2__samolet_
 
         public virtual int MaxCountPassengers { protected set; get; }
         public virtual int MaxSpeed { protected set; get; }
-        public virtual double Weight { protected set; get; }
 
         public Color ColorBody { protected set; get; }
+
+        public virtual double Weight { protected set; get; }
 
         public abstract void moveAirplane(Graphics g);
         public abstract void DownAirplane(Graphics gr);
@@ -43,6 +44,6 @@ namespace Laba_2__samolet_
             int count = countPassengers;
             countPassengers = 0;
             return count;
-        }       
+        }     
     }
 }

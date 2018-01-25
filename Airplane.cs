@@ -99,17 +99,19 @@ namespace  Laba_2__samolet_
     public override void drawAirplane(Graphics g)
         {
             drawLightAirplane(g);
-        }
+        }    
 
         protected virtual void drawLightAirplane(Graphics g)
-        {       
+        {
+            
             Brush br = new SolidBrush(ColorBody);
             g.FillRectangle(br, startPosX + 10, startPosY+15 , 10, 40);
-            g.FillRectangle(br, startPosX+35, startPosY-10 ,15, 90);    
+            g.FillRectangle(br, startPosX+35, startPosY-10 ,15, 90);     
             g.FillRectangle(br, startPosX , startPosY + 25, 66, 20);
             g.FillRectangle(br, startPosX+ 76, startPosY + 25, 4, 20);
-            Brush brBlack = new SolidBrush(Color.Black);            
+            Brush brBlack = new SolidBrush(Color.Black);         
             g.FillRectangle(brBlack, startPosX+66, startPosY + 25, 10, 20);
+            
         }
     }
 }
