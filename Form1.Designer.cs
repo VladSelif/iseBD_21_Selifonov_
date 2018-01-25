@@ -44,6 +44,7 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,7 +59,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(721, 503);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+        
             // 
             // buttonTakeAirplane
             // 
@@ -114,14 +115,13 @@
             this.listBox1.Location = new System.Drawing.Point(773, 71);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(158, 95);
-            this.listBox1.TabIndex = 5;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+     
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(773, 182);
+            this.button1.Location = new System.Drawing.Point(773, 228);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 70);
+            this.button1.Size = new System.Drawing.Size(71, 34);
             this.button1.TabIndex = 6;
             this.button1.Text = "<<";
             this.button1.UseVisualStyleBackColor = true;
@@ -129,9 +129,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(855, 182);
+            this.button2.Location = new System.Drawing.Point(856, 228);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 70);
+            this.button2.Size = new System.Drawing.Size(76, 34);
             this.button2.TabIndex = 7;
             this.button2.Text = ">>";
             this.button2.UseVisualStyleBackColor = true;
@@ -139,9 +139,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(805, 268);
+            this.button3.Location = new System.Drawing.Point(773, 268);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 54);
+            this.button3.Size = new System.Drawing.Size(158, 54);
             this.button3.TabIndex = 8;
             this.button3.Text = "Добавить";
             this.button3.UseVisualStyleBackColor = true;
@@ -189,11 +189,22 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "txt file | *.txt";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(773, 189);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(158, 33);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Sort";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 527);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -204,7 +215,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+           
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -234,6 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

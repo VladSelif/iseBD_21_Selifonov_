@@ -5,10 +5,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace  Laba_2__samolet_
+namespace Laba_2__samolet_
 {
-    public class Airplane : Vehicle
+    public class Airplane : Vehicle, IComparable<Airplane>, IEquatable<Airplane>
     {
+
+        public int CompareTo(Airplane other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return MaxSpeed.CompareTo(other.MaxSpeed);
+            }
+            if (MaxCountPassengers != other.MaxCountPassengers)
+            {
+                return MaxCountPassengers.CompareTo(other.MaxCountPassengers);
+            }
+            if (Weight != other.Weight)
+            {
+                return Weight.CompareTo(other.Weight);
+            }
+            if (ColorBody != other.ColorBody)
+            {
+                return ColorBody.Name.CompareTo(other.ColorBody.Name);
+            }
+            return 0;
+        }
+
+        public bool Equals(Airplane other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (MaxSpeed != other.MaxSpeed)
+            {
+                return false;
+            }
+            if (MaxCountPassengers != other.MaxCountPassengers)
+            {
+                return false;
+            }
+            if (Weight != other.Weight)
+            {
+                return false;
+            }
+            if (ColorBody != other.ColorBody)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Airplane airplaneObj = obj as Airplane;
+            if (airplaneObj == null)
+            {
+                return false;
+            }
+            else return Equals(airplaneObj);
+        }
+
+        public override int GetHashCode()
+        {
+            return MaxSpeed.GetHashCode();
+        }
+
+
         public override int MaxSpeed
         {
             get
@@ -108,31 +180,31 @@ namespace  Laba_2__samolet_
         }
 
         public override void DownAirplane(Graphics gr)
-         {
+        {
             startPosY += (MaxSpeed * 50 / (float)Weight) / (countPassengers == 0 ? 1 : countPassengers);
             drawAirplane(gr);
-         }
+        }
 
-    public override void drawAirplane(Graphics g)
+        public override void drawAirplane(Graphics g)
         {
             drawLightAirplane(g);
-        }    
+        }
 
         protected virtual void drawLightAirplane(Graphics g)
         {
-            
+
             Brush br = new SolidBrush(this.ColorBody);
             //tail spoiler
-            g.FillRectangle(br, startPosX + 10, startPosY+15 , 10, 40);
+            g.FillRectangle(br, startPosX + 10, startPosY + 15, 10, 40);
             //wings
-            g.FillRectangle(br, startPosX+35, startPosY-10 ,15, 90);
+            g.FillRectangle(br, startPosX + 35, startPosY - 10, 15, 90);
             // fluzelyaj       
-            g.FillRectangle(br, startPosX , startPosY + 25, 66, 20);
-            g.FillRectangle(br, startPosX+ 76, startPosY + 25, 4, 20);
-            Brush brBlack = new SolidBrush(Color.Black);         
+            g.FillRectangle(br, startPosX, startPosY + 25, 66, 20);
+            g.FillRectangle(br, startPosX + 76, startPosY + 25, 4, 20);
+            Brush brBlack = new SolidBrush(Color.Black);
             //kabina 
-            g.FillRectangle(brBlack, startPosX+66, startPosY + 25, 10, 20);
-            
+            g.FillRectangle(brBlack, startPosX + 66, startPosY + 25, 10, 20);
+
         }
 
         public override string getInfo()
@@ -140,6 +212,7 @@ namespace  Laba_2__samolet_
             return MaxSpeed + ";" + MaxCountPassengers + ";" +
             Weight + ";" + ColorBody.Name;
         }
-    
-}
+
+    }
+
 }

@@ -59,6 +59,7 @@
             this.pictureBoxAirplane.Size = new System.Drawing.Size(160, 141);
             this.pictureBoxAirplane.TabIndex = 0;
             this.pictureBoxAirplane.TabStop = false;
+            this.pictureBoxAirplane.Click += new System.EventHandler(this.pictureBoxAirplane_Click);
             // 
             // groupBox1
             // 
@@ -91,7 +92,7 @@
             this.labelAirplane.TabIndex = 0;
             this.labelAirplane.Text = "Airplane";
             this.labelAirplane.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-          
+            this.labelAirplane.Click += new System.EventHandler(this.labelAirplane_Click);
             this.labelAirplane.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelAirplane_MouseDown);
             // 
             // panel1
@@ -131,7 +132,6 @@
             this.labelBaseColor.TabIndex = 1;
             this.labelBaseColor.Text = "Основной цвет";
             this.labelBaseColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             this.labelBaseColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
             this.labelBaseColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
             // 
@@ -247,7 +247,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form2";
             this.Text = "Form2";
-           
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAirplane)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

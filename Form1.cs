@@ -13,21 +13,16 @@ namespace Laba_2__samolet_
 {
     public partial class Form1 : Form
     {
-
         Parking parking;
-
         Form2 form;
-
         private Logger log;
         
-
         public Form1()
         {
             InitializeComponent();
             log = LogManager.GetCurrentClassLogger();
             parking = new Parking(5);
             
-
             for (int i = 1; i < 6; i++)
             {
                 listBox1.Items.Add("Уровень " + i);
@@ -41,8 +36,6 @@ namespace Laba_2__samolet_
         {
             if (listBox1.SelectedIndex > -1)
             {
-
-
                 Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
                 Graphics gr = Graphics.FromImage(bmp);
                 parking.Draw(gr);
@@ -76,14 +69,12 @@ namespace Laba_2__samolet_
                     MessageBox.Show("№ Ангара: " + place);
                 }
             }
-
-
         }
 
         private void buttonTakeAirplane_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex > -1)
-            {// Прежде чем забрать машину, надо выбрать с какого уровня будем забирать
+            {
                 string level = listBox1.Items[listBox1.SelectedIndex].ToString();
                 if (maskedTextBox1.Text != "")
                 {
@@ -112,11 +103,6 @@ namespace Laba_2__samolet_
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        { }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        { }
-
         private void button1_Click(object sender, EventArgs e)
         {
             parking.LevelDown();
@@ -131,15 +117,13 @@ namespace Laba_2__samolet_
             listBox1.SelectedIndex = parking.getCurrentLevel;
             log.Info("Переход на этаж выше: " + parking.getCurrentLevel);
             Draw();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             form = new Form2();
             form.AddEvent(AddAirplane);
-            form.Show();
-           
+            form.Show();           
         }
 
         private void AddAirplane(ITransport airplane)
@@ -183,7 +167,6 @@ namespace Laba_2__samolet_
             }
         }
 
-
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -201,10 +184,10 @@ namespace Laba_2__samolet_
                 Draw();
             }
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            parking.Sort();
+            Draw();
         }
     }
     
