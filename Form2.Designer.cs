@@ -91,6 +91,7 @@
             this.labelAirplane.TabIndex = 0;
             this.labelAirplane.Text = "Airplane";
             this.labelAirplane.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+          
             this.labelAirplane.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelAirplane_MouseDown);
             // 
             // panel1
@@ -130,6 +131,7 @@
             this.labelBaseColor.TabIndex = 1;
             this.labelBaseColor.Text = "Основной цвет";
             this.labelBaseColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+           
             this.labelBaseColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragDrop);
             this.labelBaseColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelBaseColor_DragEnter);
             // 
@@ -245,6 +247,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form2";
             this.Text = "Form2";
+           
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAirplane)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

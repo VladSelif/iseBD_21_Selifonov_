@@ -31,6 +31,7 @@ namespace Laba_2__samolet_
             panel8.MouseDown += panelColor_MouseDown;
             panel9.MouseDown += panelColor_MouseDown;
 
+            //свойство присваивается к методу +=
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
        
@@ -120,8 +121,6 @@ namespace Laba_2__samolet_
 
         }
 
-        
-        
 
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
@@ -155,7 +154,5 @@ namespace Laba_2__samolet_
             }
             Close();
         }
-
-     
     }
 }

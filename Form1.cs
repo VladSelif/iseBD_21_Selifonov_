@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,15 @@ namespace Laba_2__samolet_
 
         Form2 form;
 
+        private Logger log;
+        
+
         public Form1()
         {
             InitializeComponent();
+            log = LogManager.GetCurrentClassLogger();
             parking = new Parking(5);
+            
 
             for (int i = 1; i < 6; i++)
             {
@@ -70,28 +76,52 @@ namespace Laba_2__samolet_
                     MessageBox.Show("№ Ангара: " + place);
                 }
             }
+
+
         }
 
         private void buttonTakeAirplane_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
-            {
-                var airplane = parking.GetAirplaneInParking(Convert.ToInt32(maskedTextBox1.Text));
+            if (listBox1.SelectedIndex > -1)
+            {// Прежде чем забрать машину, надо выбрать с какого уровня будем забирать
+                string level = listBox1.Items[listBox1.SelectedIndex].ToString();
+                if (maskedTextBox1.Text != "")
+                {
+                    log.Info("Забрали из ангара :" + Convert.ToInt32(maskedTextBox1.Text));
+                    
+                    try
+                    {
+                        ITransport airplane = parking.GetAirplaneInParking(Convert.ToInt32(maskedTextBox1.Text));
 
-                Bitmap bmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
-                Graphics gr = Graphics.FromImage(bmp);
-                airplane.setPosition(5, 5);
-                airplane.drawAirplane(gr);
-                pictureBox2.Image = bmp;
-                Draw();
-
+                        Bitmap bmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+                        Graphics gr = Graphics.FromImage(bmp);
+                        airplane.setPosition(5, 5);
+                        airplane.drawAirplane(gr);
+                        pictureBox2.Image = bmp;
+                        Draw();
+                    }
+                    catch (ParkingOverflowException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Неверный номер", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Общая ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        { }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        { }
 
         private void button1_Click(object sender, EventArgs e)
         {
             parking.LevelDown();
             listBox1.SelectedIndex = parking.getCurrentLevel;
+            log.Info("Переход на этаж ниже: " + parking.getCurrentLevel);
             Draw();
         }
 
@@ -99,6 +129,7 @@ namespace Laba_2__samolet_
         {
             parking.LevelUp();
             listBox1.SelectedIndex = parking.getCurrentLevel;
+            log.Info("Переход на этаж выше: " + parking.getCurrentLevel);
             Draw();
 
         }
@@ -108,21 +139,29 @@ namespace Laba_2__samolet_
             form = new Form2();
             form.AddEvent(AddAirplane);
             form.Show();
+           
         }
 
         private void AddAirplane(ITransport airplane)
         {
             if (airplane != null)
             {
-                int place = parking.PutAirplaneInParking(airplane);
-                if (place > -1)
-                {
-                    Draw();
+                try { 
+
+                int place = parking.PutAirplaneInParking(airplane);         
+                  Draw();
+                    log.Info("Добавление в ангар :" + place);
                     MessageBox.Show("Ваше место: " + place);
                 }
-                else
+                catch (ParkingOverflowException ex)
                 {
-                    MessageBox.Show("Технику не удалось поставить");
+                    MessageBox.Show
+
+                        (ex.Message, "Ошибка переполнения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Общая ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -144,6 +183,7 @@ namespace Laba_2__samolet_
             }
         }
 
+
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -160,6 +200,11 @@ namespace Laba_2__samolet_
                 }
                 Draw();
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     
