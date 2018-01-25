@@ -29,275 +29,126 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MoveAirplane = new System.Windows.Forms.Button();
-            this.zadatsamolet = new System.Windows.Forms.Button();
-            this.zadatAerobus = new System.Windows.Forms.Button();
-            this.SelectColor = new System.Windows.Forms.Button();
-            this.SelectDopColor = new System.Windows.Forms.Button();
-            this.windows = new System.Windows.Forms.CheckBox();
-            this.reactiveEngine_left = new System.Windows.Forms.CheckBox();
-            this.reactiveEngine_right = new System.Windows.Forms.CheckBox();
-            this.textBoxmaxspeed = new System.Windows.Forms.TextBox();
-            this.textBoxWeight = new System.Windows.Forms.TextBox();
+            this.buttonSetAirplane = new System.Windows.Forms.Button();
+            this.buttonSetAerobus = new System.Windows.Forms.Button();
+            this.buttonTakeAirplane = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxcountpass = new System.Windows.Forms.TextBox();
-            this.lines = new System.Windows.Forms.CheckBox();
-            this.Take_off = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.DownAirplane = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 1);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(743, 394);
+            this.pictureBox1.Size = new System.Drawing.Size(672, 557);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // MoveAirplane
+            // buttonSetAirplane
             // 
-            this.MoveAirplane.Location = new System.Drawing.Point(527, 484);
-            this.MoveAirplane.Name = "MoveAirplane";
-            this.MoveAirplane.Size = new System.Drawing.Size(187, 43);
-            this.MoveAirplane.TabIndex = 1;
-            this.MoveAirplane.Text = "Полёт";
-            this.MoveAirplane.UseVisualStyleBackColor = true;
-            this.MoveAirplane.Click += new System.EventHandler(this.MoveAirplane_Click);
+            this.buttonSetAirplane.Location = new System.Drawing.Point(684, 39);
+            this.buttonSetAirplane.Name = "buttonSetAirplane";
+            this.buttonSetAirplane.Size = new System.Drawing.Size(152, 83);
+            this.buttonSetAirplane.TabIndex = 1;
+            this.buttonSetAirplane.Text = "Загнать в ангар самолет";
+            this.buttonSetAirplane.UseVisualStyleBackColor = true;
+            this.buttonSetAirplane.Click += new System.EventHandler(this.buttonSetAirplane_Click);
             // 
-            // zadatsamolet
+            // buttonSetAerobus
             // 
-            this.zadatsamolet.Location = new System.Drawing.Point(411, 438);
-            this.zadatsamolet.Name = "zadatsamolet";
-            this.zadatsamolet.Size = new System.Drawing.Size(86, 39);
-            this.zadatsamolet.TabIndex = 2;
-            this.zadatsamolet.Text = "Airplane";
-            this.zadatsamolet.UseVisualStyleBackColor = true;
-            this.zadatsamolet.Click += new System.EventHandler(this.zadatsamolet_Click);
+            this.buttonSetAerobus.Location = new System.Drawing.Point(684, 137);
+            this.buttonSetAerobus.Name = "buttonSetAerobus";
+            this.buttonSetAerobus.Size = new System.Drawing.Size(152, 84);
+            this.buttonSetAerobus.TabIndex = 2;
+            this.buttonSetAerobus.Text = "Загнать в Ангар Аэробус";
+            this.buttonSetAerobus.UseVisualStyleBackColor = true;
+            this.buttonSetAerobus.Click += new System.EventHandler(this.buttonSetAerobus_Click);
             // 
-            // zadatAerobus
+            // buttonTakeAirplane
             // 
-            this.zadatAerobus.Location = new System.Drawing.Point(411, 482);
-            this.zadatAerobus.Name = "zadatAerobus";
-            this.zadatAerobus.Size = new System.Drawing.Size(86, 39);
-            this.zadatAerobus.TabIndex = 3;
-            this.zadatAerobus.Text = "Aerobus";
-            this.zadatAerobus.UseVisualStyleBackColor = true;
-            this.zadatAerobus.Click += new System.EventHandler(this.zadatAerobus_Click);
+            this.buttonTakeAirplane.Location = new System.Drawing.Point(57, 50);
+            this.buttonTakeAirplane.Name = "buttonTakeAirplane";
+            this.buttonTakeAirplane.Size = new System.Drawing.Size(75, 23);
+            this.buttonTakeAirplane.TabIndex = 3;
+            this.buttonTakeAirplane.Text = "Выбрать";
+            this.buttonTakeAirplane.UseVisualStyleBackColor = true;
+            this.buttonTakeAirplane.Click += new System.EventHandler(this.buttonTakeAirplane_Click);
             // 
-            // SelectColor
+            // groupBox1
             // 
-            this.SelectColor.BackColor = System.Drawing.Color.Red;
-            this.SelectColor.Location = new System.Drawing.Point(294, 401);
-            this.SelectColor.Name = "SelectColor";
-            this.SelectColor.Size = new System.Drawing.Size(75, 23);
-            this.SelectColor.TabIndex = 4;
-            this.SelectColor.Text = "Color";
-            this.SelectColor.UseVisualStyleBackColor = false;
-            this.SelectColor.Click += new System.EventHandler(this.SelectColor_Click);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.buttonTakeAirplane);
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Location = new System.Drawing.Point(678, 327);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(178, 218);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбор Самолета";
             // 
-            // SelectDopColor
+            // pictureBox2
             // 
-            this.SelectDopColor.BackColor = System.Drawing.Color.Black;
-            this.SelectDopColor.Location = new System.Drawing.Point(461, 401);
-            this.SelectDopColor.Name = "SelectDopColor";
-            this.SelectDopColor.Size = new System.Drawing.Size(75, 23);
-            this.SelectDopColor.TabIndex = 5;
-            this.SelectDopColor.Text = "button5";
-            this.SelectDopColor.UseVisualStyleBackColor = false;
-            this.SelectDopColor.Click += new System.EventHandler(this.SelectDopColor_Click);
-            // 
-            // windows
-            // 
-            this.windows.AutoSize = true;
-            this.windows.Location = new System.Drawing.Point(252, 481);
-            this.windows.Name = "windows";
-            this.windows.Size = new System.Drawing.Size(67, 17);
-            this.windows.TabIndex = 6;
-            this.windows.Text = "windows";
-            this.windows.UseVisualStyleBackColor = true;
-         
-            // 
-            // reactiveEngine_left
-            // 
-            this.reactiveEngine_left.AutoSize = true;
-            this.reactiveEngine_left.Location = new System.Drawing.Point(252, 435);
-            this.reactiveEngine_left.Name = "reactiveEngine_left";
-            this.reactiveEngine_left.Size = new System.Drawing.Size(117, 17);
-            this.reactiveEngine_left.TabIndex = 7;
-            this.reactiveEngine_left.Text = "reactiveEngine_left";
-            this.reactiveEngine_left.UseVisualStyleBackColor = true;
-           
-            // 
-            // reactiveEngine_right
-            // 
-            this.reactiveEngine_right.AutoSize = true;
-            this.reactiveEngine_right.Location = new System.Drawing.Point(252, 458);
-            this.reactiveEngine_right.Name = "reactiveEngine_right";
-            this.reactiveEngine_right.Size = new System.Drawing.Size(123, 17);
-            this.reactiveEngine_right.TabIndex = 8;
-            this.reactiveEngine_right.Text = "reactiveEngine_right";
-            this.reactiveEngine_right.UseVisualStyleBackColor = true;
-          
-            // 
-            // textBoxmaxspeed
-            // 
-            this.textBoxmaxspeed.Location = new System.Drawing.Point(108, 435);
-            this.textBoxmaxspeed.Name = "textBoxmaxspeed";
-            this.textBoxmaxspeed.Size = new System.Drawing.Size(100, 20);
-            this.textBoxmaxspeed.TabIndex = 9;
-          
-            // 
-            // textBoxWeight
-            // 
-            this.textBoxWeight.Location = new System.Drawing.Point(108, 487);
-            this.textBoxWeight.Name = "textBoxWeight";
-            this.textBoxWeight.Size = new System.Drawing.Size(100, 20);
-            this.textBoxWeight.TabIndex = 11;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 79);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(166, 133);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 438);
+            this.label1.Location = new System.Drawing.Point(20, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Max_speed:";
-          
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "№ Ангара";
             // 
-            // label2
+            // maskedTextBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 464);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Count_pass:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 490);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Weight:";
-            // 
-            // textBoxcountpass
-            // 
-            this.textBoxcountpass.Location = new System.Drawing.Point(108, 461);
-            this.textBoxcountpass.Name = "textBoxcountpass";
-            this.textBoxcountpass.Size = new System.Drawing.Size(100, 20);
-            this.textBoxcountpass.TabIndex = 15;
-           
-            // 
-            // lines
-            // 
-            this.lines.AutoSize = true;
-            this.lines.Location = new System.Drawing.Point(252, 504);
-            this.lines.Name = "lines";
-            this.lines.Size = new System.Drawing.Size(85, 17);
-            this.lines.TabIndex = 16;
-            this.lines.Text = "Airline Name";
-            this.lines.UseVisualStyleBackColor = true;
-            // 
-            // Take_off
-            // 
-            this.Take_off.Location = new System.Drawing.Point(527, 438);
-            this.Take_off.Name = "Take_off";
-            this.Take_off.Size = new System.Drawing.Size(89, 43);
-            this.Take_off.TabIndex = 17;
-            this.Take_off.Text = "Набор высоты";
-            this.Take_off.UseVisualStyleBackColor = true;
-            this.Take_off.Click += new System.EventHandler(this.Take_off_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(249, 406);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Color:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(395, 406);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Dop_Color:";
-            // 
-            // DownAirplane
-            // 
-            this.DownAirplane.Location = new System.Drawing.Point(622, 438);
-            this.DownAirplane.Name = "DownAirplane";
-            this.DownAirplane.Size = new System.Drawing.Size(92, 44);
-            this.DownAirplane.TabIndex = 20;
-            this.DownAirplane.Text = "Снижение";
-            this.DownAirplane.UseVisualStyleBackColor = true;
-            this.DownAirplane.Click += new System.EventHandler(this.DownAirplane_Click);
+            this.maskedTextBox1.Location = new System.Drawing.Point(83, 24);
+            this.maskedTextBox1.Mask = "00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(75, 20);
+            this.maskedTextBox1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 539);
-            this.Controls.Add(this.DownAirplane);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.Take_off);
-            this.Controls.Add(this.lines);
-            this.Controls.Add(this.textBoxcountpass);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxWeight);
-            this.Controls.Add(this.textBoxmaxspeed);
-            this.Controls.Add(this.reactiveEngine_right);
-            this.Controls.Add(this.reactiveEngine_left);
-            this.Controls.Add(this.windows);
-            this.Controls.Add(this.SelectDopColor);
-            this.Controls.Add(this.SelectColor);
-            this.Controls.Add(this.zadatAerobus);
-            this.Controls.Add(this.zadatsamolet);
-            this.Controls.Add(this.MoveAirplane);
+            this.ClientSize = new System.Drawing.Size(884, 557);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonSetAerobus);
+            this.Controls.Add(this.buttonSetAirplane);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button MoveAirplane;
-        private System.Windows.Forms.Button zadatsamolet;
-        private System.Windows.Forms.Button zadatAerobus;
-        private System.Windows.Forms.Button SelectColor;
-        private System.Windows.Forms.Button SelectDopColor;
-        private System.Windows.Forms.CheckBox windows;
-        private System.Windows.Forms.CheckBox reactiveEngine_left;
-        private System.Windows.Forms.CheckBox reactiveEngine_right;
-        private System.Windows.Forms.TextBox textBoxmaxspeed;
-        private System.Windows.Forms.TextBox textBoxWeight;
+        private System.Windows.Forms.Button buttonSetAirplane;
+        private System.Windows.Forms.Button buttonSetAerobus;
+        private System.Windows.Forms.Button buttonTakeAirplane;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxcountpass;
-        private System.Windows.Forms.CheckBox lines;
-        private System.Windows.Forms.Button Take_off;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button DownAirplane;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
 
