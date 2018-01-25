@@ -10,11 +10,15 @@ namespace Laba_2__samolet_
 {
     public class Parking
     {
+
         List<ClassArray<ITransport>> parkingStages;
 
         int countPlaces = 15;
+
         int placeSizeWidth = 210;
+
         int placeSizeHeight = 100;
+
         int currentLevel;
 
         public int getCurrentLevel { get { return currentLevel; } }
@@ -29,11 +33,13 @@ namespace Laba_2__samolet_
             {
                 using (BufferedStream bs = new BufferedStream(fs))
                 {
+                   
                     byte[] info = new UTF8Encoding(true).GetBytes("CountLeveles:" +
                     parkingStages.Count + Environment.NewLine);
                     fs.Write(info, 0, info.Length);
                     foreach (var level in parkingStages)
                     {
+                        
                         info = new UTF8Encoding(true).GetBytes("Level" + Environment.NewLine);
                         fs.Write(info, 0, info.Length);
                         for (int i = 0; i < countPlaces; i++)
@@ -41,6 +47,7 @@ namespace Laba_2__samolet_
                             var airplane = level[i];
                             if (airplane != null)
                             {
+                             
                                 if (airplane.GetType().Name == "Airplane")
                                 {
                                     info = new UTF8Encoding(true).GetBytes("Airplane:");
@@ -51,8 +58,9 @@ namespace Laba_2__samolet_
                                     info = new UTF8Encoding(true).GetBytes("Aerobus:");
                                     fs.Write(info, 0, info.Length);
                                 }
-
+                                
                                 info = new UTF8Encoding(true).GetBytes(airplane.getInfo() + Environment.NewLine);
+
                                 fs.Write(info, 0, info.Length);
                             }
                         }
@@ -136,6 +144,7 @@ namespace Laba_2__samolet_
             }
         }
 
+
         public void LevelDown()
         {
             if (currentLevel > 0)
@@ -180,9 +189,7 @@ namespace Laba_2__samolet_
         private void DrawMarking(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);
-    
             g.DrawString("L" + (currentLevel + 1), new Font("Arial", 30), new SolidBrush(Color.Blue), (countPlaces / 5) * placeSizeWidth - 70, 420);
-
             g.DrawRectangle(pen, 0, 0, (countPlaces / 5) * placeSizeWidth, 550);
             for (int i = 0; i < countPlaces / 5; i++)
             {
@@ -199,5 +206,6 @@ namespace Laba_2__samolet_
                 g.DrawLine(pen, i * placeSizeWidth, 0, i * placeSizeWidth, 502);
             }
         }
-    }                       
+    }
+                        
 }

@@ -24,7 +24,7 @@ namespace Laba_2__samolet_
         {
             if (p.places.Count == p.maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p.places.Count; i++)
             {
@@ -46,8 +46,9 @@ namespace Laba_2__samolet_
                 p.places.Remove(index);
                 return airplane;
             }
-            return p.defaultValue;
+            throw new ParkingIndexOutOfRangeException();
         }
+
 
         private bool CheckFreePlace(int index)
         {
