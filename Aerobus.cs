@@ -7,8 +7,113 @@ using System.Threading.Tasks;
 
 namespace Laba_2__samolet_
 {
-    public class Aerobus : Airplane
+    public class Aerobus : Airplane, IComparable<Aerobus>, IEquatable<Airplane>
     {
+
+
+        public int CompareTo(Aerobus other)
+        {
+
+            var res = (this is Airplane).CompareTo(other is Airplane);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (reactiveEngine_left != other.reactiveEngine_left)
+            {
+                return reactiveEngine_left.CompareTo(other.reactiveEngine_left);
+            }
+
+            if (reactiveEngine_right != other.reactiveEngine_right)
+            {
+                return reactiveEngine_right.CompareTo(other.reactiveEngine_right);
+
+            }
+            if (windows != other.windows)
+            {
+                return windows.CompareTo(other.windows);
+            }
+            if (lines != other.lines)
+            {
+                return lines.CompareTo(other.lines);
+
+            }
+
+            if (dopColor != other.dopColor)
+            {
+                return dopColor.Name.CompareTo(other.dopColor.Name);
+            }
+            return 0;
+        }
+
+
+        public bool Equals(Aerobus other)
+
+        {
+
+            var res = (this is Airplane).Equals(other is Airplane);
+            if (!res)
+            {
+                return res;
+            }
+
+
+            if (reactiveEngine_left != other.reactiveEngine_left) 
+            {
+                return false;
+            }
+
+            if (reactiveEngine_right != other.reactiveEngine_right) 
+            {
+                return false;
+            }
+            if (windows != other.windows)
+            {
+                return false;
+            }
+
+            if (lines != other.lines)
+            {
+                return false;
+
+            }
+            if (dopColor != other.dopColor)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            Aerobus airplaneObj = obj as Aerobus;
+            if (airplaneObj == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(airplaneObj);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return MaxSpeed.GetHashCode();
+        }
+
+
+
+
+
         private bool reactiveEngine_left;
         private bool reactiveEngine_right;
         private bool windows;

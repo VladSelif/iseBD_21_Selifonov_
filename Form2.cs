@@ -121,6 +121,8 @@ namespace Laba_2__samolet_
 
         }
 
+        
+        
 
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
@@ -153,6 +155,21 @@ namespace Laba_2__samolet_
                 eventAddAirplane(airplane);
             }
             Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAirplane_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxAirplane_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
